@@ -13,13 +13,13 @@ const TechStack = () => {
   ];
 
   return (
-    <section className="py-16 bg-card border-y border-white/5 overflow-hidden">
+    <section className="py-16 bg-muted/20 border-y border-border overflow-hidden">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
-          <h3 className="text-xl font-semibold text-white">
+          <h3 className="text-xl font-semibold text-foreground">
             Powering your stack with <span className="text-primary">best-in-class</span> integrations
           </h3>
-          <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-muted-foreground flex items-center gap-2">
+          <div className="px-3 py-1 rounded-full bg-muted border border-border text-xs font-mono text-muted-foreground flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             API Universal Compatibility
           </div>
@@ -36,7 +36,7 @@ const TechStack = () => {
               <img 
                 src={tech.icon} 
                 alt={tech.name} 
-                className="max-h-8 max-w-[100px] object-contain invert brightness-0 dark:invert" 
+                className="max-h-8 max-w-[100px] object-contain" 
               />
             </motion.div>
           ))}

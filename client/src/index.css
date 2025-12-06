@@ -37,49 +37,49 @@
 }
 
 :root {
-  /* Dark Slate #020617 as base background - keeping it dark by default for "Enterprise Tech" look */
-  --background: 228 87% 5%; 
-  --foreground: 210 40% 98%;
+  /* Light Mode (White Background) */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%; /* Dark Slate for text */
 
-  /* Deep Blue #002060 as Card background or darker elements */
-  --card: 220 100% 10%; 
-  --card-foreground: 210 40% 98%;
+  /* White Cards with Borders */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
  
-  --popover: 220 100% 10%;
-  --popover-foreground: 210 40% 98%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
 
-  /* Electric Blue #007BFF */
+  /* Electric Blue #007BFF remains the same */
   --primary: 211 100% 50%;
   --primary-foreground: 0 0% 100%;
 
-  /* Deep Blue #002060 for secondary */
-  --secondary: 220 100% 19%;
-  --secondary-foreground: 0 0% 100%;
+  /* Secondary can be lighter blue or slate */
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222 47% 11.2%;
 
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
 
-  --accent: 217 33% 17%;
-  --accent-foreground: 210 40% 98%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222 47% 11.2%;
 
-  --destructive: 0 62.8% 30.6%;
+  --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 217 33% 17%;
-  --input: 217 33% 17%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
   --ring: 211 100% 50%;
 
-  --chart-1: 211 100% 50%; /* Electric Blue */
-  --chart-2: 220 100% 60%; /* Lighter Blue */
-  --chart-3: 199 89% 48%; /* Cyan */
-  --chart-4: 250 60% 60%; /* Purple */
-  --chart-5: 160 60% 45%; /* Green */
+  --chart-1: 211 100% 50%;
+  --chart-2: 220 100% 60%;
+  --chart-3: 199 89% 48%;
+  --chart-4: 250 60% 60%;
+  --chart-5: 160 60% 45%;
 
   --radius: 0.5rem;
 }
 
-/* Enforcing Dark Mode aesthetic by default as requested */
 .dark {
+  /* Keep old dark values here if needed, but we default to light now */
   --background: 228 87% 5%; 
   --foreground: 210 40% 98%;
   --card: 220 100% 10%; 
@@ -110,7 +110,6 @@
   }
 }
 
-/* Custom utilities for the requested effects */
 @layer utilities {
   .text-glow {
     text-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
@@ -120,9 +119,10 @@
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
   }
   
+  /* Adjusted for light mode visibility */
   .bg-grid-pattern {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 }

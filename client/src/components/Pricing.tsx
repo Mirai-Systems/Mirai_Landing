@@ -52,16 +52,16 @@ const Pricing = () => {
   ];
 
   return (
-    <section id="pricing" className="py-24 bg-[#010409] relative">
+    <section id="pricing" className="py-24 bg-muted/30 relative">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Inversión con ROI Claro</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 text-foreground">Inversión con ROI Claro</h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
             No cobramos por horas. Cobramos por valor y sistemas que funcionan 24/7.
           </p>
 
           <div className="flex items-center justify-center gap-4">
-            <span className={cn("text-sm font-medium", !isMonthly ? "text-white" : "text-muted-foreground")}>
+            <span className={cn("text-sm font-medium", !isMonthly ? "text-foreground" : "text-muted-foreground")}>
               Proyecto Único
             </span>
             <Switch
@@ -69,7 +69,7 @@ const Pricing = () => {
               onCheckedChange={setIsMonthly}
               className="data-[state=checked]:bg-primary"
             />
-            <span className={cn("text-sm font-medium", isMonthly ? "text-white" : "text-muted-foreground")}>
+            <span className={cn("text-sm font-medium", isMonthly ? "text-foreground" : "text-muted-foreground")}>
               Mantenimiento Mensual
             </span>
           </div>
@@ -83,7 +83,7 @@ const Pricing = () => {
                 "relative p-8 rounded-2xl border flex flex-col transition-all duration-300 hover:-translate-y-2",
                 plan.highlight
                   ? "bg-primary/5 border-primary shadow-[0_0_40px_rgba(0,123,255,0.15)] z-10"
-                  : "bg-card border-white/10 hover:border-white/20"
+                  : "bg-card border-border hover:border-border/80"
               )}
             >
               {plan.highlight && (
@@ -93,13 +93,13 @@ const Pricing = () => {
               )}
 
               <div className="mb-8">
-                <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
+                <h3 className="text-xl font-bold mb-2 text-foreground">{plan.name}</h3>
                 <p className="text-muted-foreground text-sm h-10">{plan.description}</p>
               </div>
 
               <div className="mb-8">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-bold text-white">{plan.price}</span>
+                  <span className="text-4xl font-bold text-foreground">{plan.price}</span>
                   {plan.period && (
                     <span className="text-muted-foreground">{plan.period}</span>
                   )}
@@ -108,7 +108,7 @@ const Pricing = () => {
 
               <ul className="space-y-4 mb-8 flex-1">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+                  <li key={i} className="flex items-start gap-3 text-sm text-muted-foreground">
                     <div className="mt-0.5 p-0.5 rounded-full bg-primary/20 text-primary">
                       <Check className="w-3 h-3" />
                     </div>
@@ -122,7 +122,7 @@ const Pricing = () => {
                   "w-full py-6 rounded-xl font-semibold",
                   plan.highlight
                     ? "bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/25"
-                    : "bg-white/5 hover:bg-white/10 text-white border border-white/10"
+                    : "bg-muted hover:bg-muted/80 text-foreground border border-border"
                 )}
               >
                 Comenzar Ahora

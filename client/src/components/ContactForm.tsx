@@ -70,26 +70,26 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-24 bg-background border-t border-white/5">
+    <section className="py-24 bg-background border-t border-border">
       <div className="container px-4 md:px-6 mx-auto max-w-2xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Comienza tu Automatización</h2>
+          <h2 className="text-3xl font-bold mb-4 text-foreground">Comienza tu Automatización</h2>
           <p className="text-muted-foreground">
             Completa este formulario para ver si calificas para una auditoría gratuita.
           </p>
         </div>
 
-        <div className="bg-card border border-white/10 rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+        <div className="bg-card border border-border rounded-2xl p-8 shadow-2xl relative overflow-hidden">
           {isSuccess ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               className="text-center py-12"
             >
-              <div className="w-20 h-20 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-green-500/20 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Check className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">¡Datos Recibidos!</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-2">¡Datos Recibidos!</h3>
               <p className="text-muted-foreground">
                 Nuestro sistema está procesando tu solicitud. Te contactaremos en menos de 24h.
               </p>
@@ -109,7 +109,7 @@ const ContactForm = () => {
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                 <div className="flex justify-between mb-8 relative">
-                  <div className="absolute top-1/2 left-0 w-full h-0.5 bg-white/10 -z-10" />
+                  <div className="absolute top-1/2 left-0 w-full h-0.5 bg-border -z-10" />
                   {[1, 2, 3].map((s) => (
                     <div
                       key={s}
@@ -117,7 +117,7 @@ const ContactForm = () => {
                         "w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold transition-colors border-2",
                         step >= s
                           ? "bg-primary border-primary text-white"
-                          : "bg-background border-white/20 text-muted-foreground"
+                          : "bg-background border-border text-muted-foreground"
                       )}
                     >
                       {s}
@@ -135,7 +135,7 @@ const ContactForm = () => {
                       className="space-y-6"
                     >
                       <div className="space-y-4">
-                        <h3 className="text-xl font-semibold">¿Qué herramientas usas hoy?</h3>
+                        <h3 className="text-xl font-semibold text-foreground">¿Qué herramientas usas hoy?</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                           {tools.map((tool) => (
                             <div
@@ -145,7 +145,7 @@ const ContactForm = () => {
                                 "cursor-pointer p-3 rounded-lg border text-sm text-center transition-all",
                                 form.watch("tools").includes(tool)
                                   ? "bg-primary/20 border-primary text-primary font-medium"
-                                  : "bg-white/5 border-white/10 hover:border-white/30 text-muted-foreground"
+                                  : "bg-muted border-border hover:border-primary/30 text-muted-foreground"
                               )}
                             >
                               {tool}
@@ -153,7 +153,7 @@ const ContactForm = () => {
                           ))}
                         </div>
                         {form.formState.errors.tools && (
-                          <p className="text-red-400 text-sm">{form.formState.errors.tools.message}</p>
+                          <p className="text-red-500 text-sm">{form.formState.errors.tools.message}</p>
                         )}
                       </div>
                       <Button type="button" onClick={nextStep} className="w-full">
@@ -175,11 +175,11 @@ const ContactForm = () => {
                         name="bottleneck"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-xl font-semibold">¿Cuál es tu mayor cuello de botella?</FormLabel>
+                            <FormLabel className="text-xl font-semibold text-foreground">¿Cuál es tu mayor cuello de botella?</FormLabel>
                             <FormControl>
                               <Textarea 
                                 placeholder="Ej: Pierdo 5 horas a la semana copiando datos de Excel a HubSpot..." 
-                                className="min-h-[150px] bg-white/5 border-white/10 focus:border-primary"
+                                className="min-h-[150px] bg-muted border-border focus:border-primary text-foreground"
                                 {...field} 
                               />
                             </FormControl>
@@ -206,7 +206,7 @@ const ContactForm = () => {
                       exit={{ opacity: 0, x: -20 }}
                       className="space-y-4"
                     >
-                      <h3 className="text-xl font-semibold mb-4">Tus datos de contacto</h3>
+                      <h3 className="text-xl font-semibold mb-4 text-foreground">Tus datos de contacto</h3>
                       <FormField
                         control={form.control}
                         name="name"
@@ -214,7 +214,7 @@ const ContactForm = () => {
                           <FormItem>
                             <FormLabel>Nombre</FormLabel>
                             <FormControl>
-                              <Input placeholder="Tu nombre" className="bg-white/5 border-white/10" {...field} />
+                              <Input placeholder="Tu nombre" className="bg-muted border-border text-foreground" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -227,7 +227,7 @@ const ContactForm = () => {
                           <FormItem>
                             <FormLabel>Email Corporativo</FormLabel>
                             <FormControl>
-                              <Input placeholder="tu@empresa.com" className="bg-white/5 border-white/10" {...field} />
+                              <Input placeholder="tu@empresa.com" className="bg-muted border-border text-foreground" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -240,7 +240,7 @@ const ContactForm = () => {
                           <FormItem>
                             <FormLabel>Empresa (Opcional)</FormLabel>
                             <FormControl>
-                              <Input placeholder="Nombre de tu empresa" className="bg-white/5 border-white/10" {...field} />
+                              <Input placeholder="Nombre de tu empresa" className="bg-muted border-border text-foreground" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>

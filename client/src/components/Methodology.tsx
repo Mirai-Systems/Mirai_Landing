@@ -48,7 +48,7 @@ const Methodology = () => {
 
         <div className="relative max-w-4xl mx-auto">
           {/* Central Line */}
-          <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-1 bg-white/10 -translate-x-1/2">
+          <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-1 bg-border/50 -translate-x-1/2">
             <motion.div 
               style={{ scaleY: scrollYProgress }}
               className="absolute top-0 left-0 w-full bg-primary origin-top"
@@ -64,7 +64,7 @@ const Methodology = () => {
                 }`}
               >
                 {/* Node on the line */}
-                <div className="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-background border-4 border-card z-10 flex items-center justify-center shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                <div className="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-background border-4 border-card z-10 flex items-center justify-center shadow-lg">
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
@@ -80,12 +80,12 @@ const Methodology = () => {
                     viewport={{ margin: "-100px" }}
                     transition={{ duration: 0.5 }}
                   >
-                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 border border-white/10 text-primary mb-4 shadow-lg ${
+                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-muted border border-border text-primary mb-4 shadow-sm ${
                       index % 2 === 0 ? "md:ml-auto" : ""
                     }`}>
                       {step.icon}
                     </div>
-                    <h3 className="text-2xl font-bold mb-3 text-white">
+                    <h3 className="text-2xl font-bold mb-3 text-foreground">
                       <span className="text-primary/50 mr-2">0{step.id}.</span>
                       {step.title}
                     </h3>

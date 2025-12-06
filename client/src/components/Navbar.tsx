@@ -30,7 +30,7 @@ const Navbar = () => {
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300 border-b border-transparent",
         isScrolled
-          ? "bg-background/80 backdrop-blur-md border-white/10 shadow-lg py-3"
+          ? "bg-background/80 backdrop-blur-md border-border/10 shadow-lg py-3"
           : "bg-transparent py-5"
       )}
     >
@@ -58,13 +58,13 @@ const Navbar = () => {
             </a>
           ))}
           <Button variant="default" className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 shadow-[0_0_15px_rgba(0,123,255,0.3)] hover:shadow-[0_0_25px_rgba(0,123,255,0.5)] transition-all duration-300">
-            Auditoría Gratis <ArrowRight className="ml-2 w-4 h-4" />
+            Solicitar Demo <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </div>
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-foreground"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
@@ -85,14 +85,14 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-lg font-medium text-white/80 hover:text-primary"
+                  className="text-lg font-medium text-foreground/80 hover:text-primary"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
                 </a>
               ))}
               <Button className="w-full bg-primary text-white">
-                Auditoría Gratis
+                Solicitar Demo
               </Button>
             </div>
           </motion.div>
