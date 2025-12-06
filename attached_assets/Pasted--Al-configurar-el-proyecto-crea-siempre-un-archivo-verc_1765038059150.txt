@@ -1,0 +1,191 @@
+—--
+
+Al configurar el proyecto, crea siempre un archivo vercel.json en la raíz para asegurar el despliegue
+
+correcto de una SPA (Single Page Application) con Vite.
+
+El archivo debe tener exactamente esta configuración:
+
+1. framework: "vite"
+
+2. outputDirectory: "dist/public"
+
+3. rewrites: Una regla que redirija todas las rutas (source: "/(.*)") a /index.html para que el
+
+routing del lado del cliente funcione sin errores 404.
+
+No esperes a que falle el deploy, inclúyelo desde el principio.
+
+—--
+
+
+
+Negocio: MIRAI SYSTEMS - Agencia especializada en automatización de procesos con IA y n8n para optimizar costes y tiempo en empresas.
+
+Crea un sitio web dinámico para "MIRAI SYSTEMS" - una agencia de ingeniería de automatizaciones que ayuda a PYMES y startups a integrar sus herramientas (CRM, Cloud, IA) para operar en piloto automático.
+
+DISEÑO Y ESTÉTICA:
+
+
+
+Paleta Corporativa: Azul Profundo (#002060), Azul Eléctrico (#007BFF), Fondo Dark Slate (#020617), Texto Blanco/Gris Pluma.
+
+Gradientes lineales elegantes (de #002060 a #007BFF) en botones y encabezados clave.
+
+Tipografía: Fuente 'Inter' o 'Jakarta Sans' para títulos (confianza), 'JetBrains Mono' para detalles técnicos.
+
+Elementos visuales: Conectores tipo "nodo", líneas de flujo de datos, estética de diagrama de ingeniería.
+
+Animaciones tipo "flowchart" donde la data viaja de un punto a otro.
+
+HERO SECTION:
+
+
+
+Background animado con partículas conectadas (nodos) que fluyen suavemente en azul.
+
+Título con gradiente lineal: "Automatización que Rentabiliza, IA que Ejecuta"
+
+Gráfica central: Representación abstracta de un flujo de n8n simplificando el caos.
+
+Typing effect en subtítulo mostrando realidades: "Ahorra 20h semanales", "Elimina errores manuales", "Maximiza tu ROI".
+
+Dos CTAs: "Auditoría de Procesos" (primario, gradiente azul), "Ver Integraciones" (secundario, outline).
+
+SERVICIOS:
+
+
+
+Cards en grid estilo "Bento Box" con bordes sutiles iluminados en #007BFF.
+
+Cada servicio con icono tecnológico (API, Database, Robot, Brain).
+
+Servicios: Desarrollo n8n Avanzado, Integración de LLMs (IA), Sincronización CRM & Cloud, Auditoría de Procesos, Bots Inteligentes.
+
+Micro-animaciones: Al pasar el mouse, los iconos "procesan" o giran.
+
+Click para expandir modal con detalles técnicos del stack (Airtable, Notion, Google Cloud).
+
+CASOS DE USO (ROI):
+
+
+
+Slider comparativo interactivo.
+
+Cada caso con: "Antes (Caos Manual)" vs "Después (Sistema Mirai)".
+
+Contadores animados de ahorro: Dinero ahorrado ($) y Horas recuperadas (h).
+
+Logo del cliente + métrica clave de eficiencia.
+
+CTA: "Calcula tu ahorro potencial".
+
+Filtros por área: Ventas, Operaciones, Finanzas.
+
+METODOLOGÍA:
+
+
+
+Timeline vertical que simula una tubería de datos (Pipeline).
+
+4 Fases claras: 1. Discovery (Auditoría), 2. Arquitectura (Diseño del flujo), 3. Desarrollo (n8n + Código), 4. Despliegue.
+
+Al hacer scroll, una línea de luz azul recorre la tubería activando cada fase.
+
+Progress tracker lateral fijo.
+
+TECH STACK (Integraciones):
+
+
+
+Grid de logos minimalistas en escala de grises.
+
+Hover effect: El logo recupera su color original y brilla.
+
+Logos clave: n8n, OpenAI, Google Cloud, HubSpot, Airtable, Notion, Slack.
+
+Badge animado: "Integración API Universal".
+
+RECURSOS/BLOG:
+
+
+
+Hero con "Blueprint del mes" (Ej: Cómo automatizar facturación).
+
+Grid de artículos: Tutoriales n8n, Casos de uso IA, Templates de Notion.
+
+Search bar estilo terminal de comandos.
+
+Tags populares: #NoCode, #Efficiency, #BusinessIntelligence.
+
+Descargables con gated content (Checklists de automatización).
+
+PRICING:
+
+
+
+Toggle entre "Proyecto Puntual" / "Mantenimiento Mensual".
+
+3 tiers con tabla comparativa limpia.
+
+Features con checkmarks azules brillantes.
+
+Hover en tier: efecto de elevación (lift).
+
+"Más Rentable" badge en el plan intermedio (Growth).
+
+FORMULARIO CONTACTO:
+
+
+
+Multi-step (3 pasos) enfocado en cualificación.
+
+Paso 1: ¿Qué herramientas usas hoy? (Selección de iconos).
+
+Paso 2: ¿Cuál es tu mayor cuello de botella? (Texto).
+
+Paso 3: Datos de contacto.
+
+Validación en tiempo real estilo código (checks verdes).
+
+Success state: Animación de "Datos Procesados Correctamente".
+
+STATS EN VIVO:
+
+
+
+Ticker horizontal inferior con métricas de agencia.
+
+"Procesos automatizados hoy", "Horas ahorradas a clientes", "APIs conectadas".
+
+Background oscuro solido (#002060) para separar del footer.
+
+FOOTER:
+
+
+
+Newsletter "The Automation Digest".
+
+Links a redes (LinkedIn, Twitter) con efectos hover en azul eléctrico.
+
+Enlaces rápidos organizados por soluciones.
+
+Nota legal minimalista.
+
+CARACTERÍSTICAS TÉCNICAS:
+
+
+
+Smooth scroll para navegación fluida.
+
+Chart.js para visualizar el ahorro de costes en los casos de éxito.
+
+Cursor custom simple (punto azul) que se expande sobre links.
+
+Dark mode obligatorio (estética Enterprise Tech).
+
+Loading screen mostrando una barra de carga de "Compilando sistema...".
+
+Código limpio y modular (React + Tailwind).
+
+El diseño debe gritar "Ingeniería", "Solidez", "Eficiencia" y "Empresa Seria" - como una interfaz de software de alto nivel, alejándose del estilo "startupero" genérico.
