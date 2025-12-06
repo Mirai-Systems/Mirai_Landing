@@ -147,7 +147,7 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="text-lg text-muted-foreground max-w-xl"
           >
-            Ayudamos a PYMES y startups a integrar sus herramientas (CRM, Cloud, IA) para operar en piloto automático con ingeniería de precisión.
+            Ayudamos a PYMES, Startups y pequeños negocios a implementar Inteligencia Artificial para ahorrar costos, minimizar errores humanos y ganar tiempo y productividad
           </motion.p>
 
           <motion.div
@@ -202,7 +202,7 @@ const Hero = () => {
                </div>
                
                <div className="space-y-4">
-                 <WorkflowNode icon="📩" label="Nuevo Lead (Webhook)" status="success" />
+                 <WorkflowNode icon="💬" label="Mensaje en WhatsApp o Redes Sociales" status="success" />
                  <div className="h-8 w-0.5 bg-white/10 mx-8 relative">
                     <motion.div 
                       animate={{ y: [0, 32] }}
@@ -210,11 +210,10 @@ const Hero = () => {
                       className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_#007BFF]"
                     />
                  </div>
-                 <WorkflowNode icon="🧠" label="Análisis IA (OpenAI)" status="processing" />
+                 <WorkflowNode icon="🤖" label="Automatización con IA" status="processing" />
                  <div className="h-8 w-0.5 bg-white/10 mx-8 relative"></div>
-                 <div className="grid grid-cols-2 gap-4">
-                    <WorkflowNode icon="💾" label="Guardar CRM" status="pending" small />
-                    <WorkflowNode icon="💬" label="Notificar Slack" status="pending" small />
+                 <div className="w-full">
+                    <WorkflowNode icon="📅" label="Cita agendada en tu calendario" status="pending" small />
                  </div>
                </div>
             </div>

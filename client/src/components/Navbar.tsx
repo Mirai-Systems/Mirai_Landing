@@ -37,12 +37,11 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/">
           <a className="flex items-center gap-2 group cursor-pointer">
-            <div className="bg-primary/20 p-2 rounded-lg border border-primary/50 group-hover:border-primary transition-colors">
-              <Terminal className="w-6 h-6 text-primary" />
-            </div>
-            <span className="text-xl font-bold tracking-tight text-white">
-              MIRAI <span className="text-primary">SYSTEMS</span>
-            </span>
+            <img 
+              src="https://res.cloudinary.com/dllawhmxq/image/upload/v1765044078/Logo_Mirai_Grande_htj7eg.png" 
+              alt="MIRAI SYSTEMS Logo" 
+              className="h-10 w-auto" 
+            />
           </a>
         </Link>
 

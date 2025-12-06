@@ -9,12 +9,11 @@ const Footer = () => {
           <div className="md:col-span-2 space-y-6">
              <Link href="/">
               <a className="flex items-center gap-2 group cursor-pointer">
-                <div className="bg-primary/20 p-2 rounded-lg border border-primary/50">
-                  <Terminal className="w-6 h-6 text-primary" />
-                </div>
-                <span className="text-xl font-bold tracking-tight text-white">
-                  MIRAI <span className="text-primary">SYSTEMS</span>
-                </span>
+                <img 
+                  src="https://res.cloudinary.com/dllawhmxq/image/upload/v1765044078/Logo_Mirai_Grande_htj7eg.png" 
+                  alt="MIRAI SYSTEMS Logo" 
+                  className="h-8 w-auto" 
+                />
               </a>
             </Link>
             <p className="text-muted-foreground max-w-sm">
