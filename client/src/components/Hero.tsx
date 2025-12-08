@@ -197,7 +197,7 @@ const Hero = () => {
                </div>
                
                <div className="space-y-4">
-                 <WorkflowNode icon="💬" label="Mensaje en WhatsApp o Redes Sociales" status="success" />
+                 <WorkflowNode icon="💬" label="Mensaje en WhatsApp o Instagram" status="success" />
                  <div className="h-8 w-0.5 bg-border mx-8 relative">
                     <motion.div 
                       animate={{ y: [0, 32] }}
@@ -205,8 +205,14 @@ const Hero = () => {
                       className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_#007BFF]"
                     />
                  </div>
-                 <WorkflowNode icon="🤖" label="Automatización con IA" status="processing" />
-                 <div className="h-8 w-0.5 bg-border mx-8 relative"></div>
+                 <WorkflowNode icon="🤖" label="Chatbot con IA" status="processing" />
+                 <div className="h-8 w-0.5 bg-border mx-8 relative">
+                    <motion.div 
+                      animate={{ y: [0, 32] }}
+                      transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: 0.75 }}
+                      className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_#007BFF]"
+                    />
+                 </div>
                  <WorkflowNode icon="📅" label="Cita agendada en tu calendario" status="pending" />
                </div>
             </div>
