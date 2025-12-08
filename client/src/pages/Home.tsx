@@ -20,7 +20,7 @@ const Home = () => {
       <Methodology />
       <TechStack />
       {/* <Resources /> */}
-      <Pricing />
+      {/* <Pricing /> */}
       <ContactForm />
       <Footer />
     </div>

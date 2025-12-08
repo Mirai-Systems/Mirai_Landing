@@ -70,16 +70,16 @@ const ContactForm = () => {
   };
 
   return (
-    <section className="py-24 bg-background border-t border-border">
+    <section id="contact" className="py-24 bg-background border-t border-border">
       <div className="container px-4 md:px-6 mx-auto max-w-2xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-foreground">Comienza tu Automatización</h2>
-          <p className="text-muted-foreground">
-            Completa este formulario para ver si calificas para una auditoría gratuita.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Hablemos de tu Proyecto</h2>
+          <p className="text-muted-foreground text-lg">
+            Cuéntanos tus retos actuales. Analizaremos tu caso y te contactaremos para agendar una sesión de estrategia.
           </p>
         </div>
 
-        <div className="bg-card border border-border rounded-2xl p-8 shadow-2xl relative overflow-hidden">
+        <div className="bg-card border border-border rounded-2xl p-8 shadow-[0_0_40px_rgba(0,0,0,0.05)] dark:shadow-[0_0_40px_rgba(255,255,255,0.02)] relative overflow-hidden">
           {isSuccess ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}

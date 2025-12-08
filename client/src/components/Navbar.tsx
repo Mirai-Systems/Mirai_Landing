@@ -21,8 +21,7 @@ const Navbar = () => {
     { name: "Servicios", href: "#services" },
     { name: "Casos de Uso", href: "#cases" },
     { name: "Metodología", href: "#methodology" },
-    { name: "Recursos", href: "#resources" },
-    { name: "Precios", href: "#pricing" },
+    { name: "Contacto", href: "#contact" },
   ];
 
   return (
