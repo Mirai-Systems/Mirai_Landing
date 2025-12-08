@@ -119,7 +119,7 @@ const Hero = () => {
               </span>
               Ingeniería de Automatización
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-tight text-foreground">
+            <h1 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-foreground">
               Automatización que <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007BFF] to-[#002060]">
                 Rentabiliza

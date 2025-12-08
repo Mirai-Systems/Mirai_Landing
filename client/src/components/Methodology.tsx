@@ -12,26 +12,26 @@ const Methodology = () => {
   const steps = [
     {
       id: 1,
-      title: "Discovery & Auditoría",
-      description: "Analizamos tus procesos actuales, identificamos cuellos de botella y calculamos el ROI potencial antes de escribir una línea de código.",
+      title: "Auditoría Estratégica",
+      description: "Analizamos tu negocio para encontrar dónde estás perdiendo dinero o tiempo. Definimos la estrategia antes de tocar nada técnico.",
       icon: <Search className="w-6 h-6" />
     },
     {
       id: 2,
-      title: "Arquitectura de Flujos",
-      description: "Diseñamos la solución completa en diagramas técnicos. Definimos herramientas, triggers y manejo de errores.",
+      title: "Diseño de la Solución",
+      description: "Diseñamos el flujo de trabajo ideal. Te explicamos qué vamos a hacer y cómo funcionará, en idioma humano, sin tecnicismos.",
       icon: <PenTool className="w-6 h-6" />
     },
     {
       id: 3,
-      title: "Desarrollo & Integración",
-      description: "Construimos los workflows en n8n, conectamos APIs y configuramos la lógica de negocio con scripts personalizados si es necesario.",
+      title: "Construcción e Implementación",
+      description: "Conectamos tus herramientas y creamos las automatizaciones de forma invisible, sin interrumpir tu trabajo diario ni el de tu equipo.",
       icon: <Code className="w-6 h-6" />
     },
     {
       id: 4,
-      title: "Despliegue & Training",
-      description: "Lanzamos a producción, monitoreamos los primeros días y capacitamos a tu equipo para que tomen el control.",
+      title: "Entrega y Control",
+      description: "Te entregamos el sistema funcionando y monitoreamos las primeras semanas para mejorar constantemente. Tú tienes el control, nosotros te damos el soporte.",
       icon: <Rocket className="w-6 h-6" />
     }
   ];
@@ -42,7 +42,7 @@ const Methodology = () => {
         <div className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Nuestra Metodología</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Un proceso de ingeniería estructurado para garantizar resultados predecibles.
+            Sin tecnicismos ni cajas negras. Un paso a paso claro para pasar del caos al piloto automático.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ const Methodology = () => {
                   />
                 </div>
 
-                <div className={`flex-1 pl-16 md:pl-0 ${index % 2 === 0 ? "md:pr-24 md:text-right" : "md:pl-24"}`}>
+                <div className={`flex-1 pl-16 md:pl-0 ${index % 2 === 0 ? "md:pr-28 md:text-right" : "md:pl-28"}`}>
                   <motion.div
                     initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
