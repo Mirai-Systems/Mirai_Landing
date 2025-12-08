@@ -26,20 +26,28 @@ const TechStack = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-items-center">
-          {techs.map((tech, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.1, filter: "brightness(0) grayscale(0%)" }}
-              className="w-full h-12 flex items-center justify-center transition-all duration-300 opacity-60 hover:opacity-100 cursor-pointer"
-            >
-              {/* Using text fallback if images fail, but intended to be logos */}
-              <img 
-                src={tech.icon} 
-                alt={tech.name} 
-                className="h-12 w-auto object-contain mx-auto mix-blend-multiply" 
-              />
-            </motion.div>
-          ))}
+          {techs.map((tech, index) => {
+            const getSizeClass = (name: string) => {
+              if (["n8n", "Notion", "Slack", "Stripe"].includes(name)) return "h-8";
+              if (["OpenAI", "Google Cloud"].includes(name)) return "h-16";
+              return "h-12";
+            };
+
+            return (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.1, filter: "brightness(0) grayscale(0%)" }}
+                className="w-full h-20 flex items-center justify-center transition-all duration-300 opacity-60 hover:opacity-100 cursor-pointer"
+              >
+                {/* Using text fallback if images fail, but intended to be logos */}
+                <img 
+                  src={tech.icon} 
+                  alt={tech.name} 
+                  className={`${getSizeClass(tech.name)} w-auto object-contain mx-auto mix-blend-multiply`} 
+                />
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
