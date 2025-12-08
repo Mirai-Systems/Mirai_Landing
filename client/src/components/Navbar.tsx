@@ -35,15 +35,15 @@ const Navbar = () => {
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link href="/">
-          <a className="flex items-center gap-2 group cursor-pointer">
-            <img 
-              src="https://res.cloudinary.com/dllawhmxq/image/upload/v1765044078/Logo_Mirai_Grande_htj7eg.png" 
-              alt="MIRAI SYSTEMS Logo" 
-              className="h-10 w-auto" 
-            />
-          </a>
-        </Link>
+          <Link href="/">
+            <a className="flex items-center gap-2 group cursor-pointer">
+              <img 
+                src="https://res.cloudinary.com/dllawhmxq/image/upload/v1765200761/Logo_Mirai_Grande_sin_fondo_biufhk.png" 
+                alt="MIRAI SYSTEMS Logo" 
+                className="h-10 w-auto" 
+              />
+            </a>
+          </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">

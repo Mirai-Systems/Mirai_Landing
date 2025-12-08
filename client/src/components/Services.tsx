@@ -1,35 +1,35 @@
 import { motion } from "framer-motion";
-import { Database, Bot, Zap, Brain, Layers, ArrowUpRight } from "lucide-react";
+import { Database, Bot, Zap, ArrowUpRight, Instagram } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const Services = () => {
   const services = [
     {
-      title: "Desarrollo n8n Avanzado",
-      description: "Orquestación de flujos complejos, manejo de errores y lógica condicional avanzada.",
-      icon: <Zap className="w-8 h-8 text-yellow-400" />,
-      tags: ["Webhook", "API", "Cron"],
+      title: "Chatbots de IA & Ventas",
+      description: "Asistentes entrenados con tu información que atienden clientes, resuelven dudas y cierran citas automáticamente en tu web, redes sociales o WhatsApp. Convierte visitas en ventas mientras duermes.",
+      icon: <Bot className="w-8 h-8 text-blue-500" />,
+      tags: ["WhatsApp", "Soporte 24/7", "Sin Errores"],
       colSpan: "lg:col-span-2",
     },
     {
-      title: "Integración de LLMs (IA)",
-      description: "Implementación de GPT-4, Claude y modelos open source en tus procesos.",
-      icon: <Brain className="w-8 h-8 text-purple-400" />,
-      tags: ["OpenAI", "LangChain", "Vector DB"],
+      title: "Prospección y Marketing IA",
+      description: "Sistemas que redactan correos personalizados, crean contenido para redes o cualifican leads entrantes sin que muevas un dedo.",
+      icon: <Instagram className="w-8 h-8 text-pink-500" />,
+      tags: ["Email", "Leads"],
       colSpan: "lg:col-span-1",
     },
     {
-      title: "Sincronización CRM & Cloud",
-      description: "Mantén tus datos alineados entre HubSpot, Salesforce, Airtable y Google Cloud.",
-      icon: <Database className="w-8 h-8 text-blue-400" />,
-      tags: ["SQL", "NoSQL", "Data Sync"],
+      title: "Automatización de Procesos",
+      description: "Eliminamos el 'copiar y pegar'. Facturas, contratos y gestión de pedidos se hacen solos para que tu equipo se enfoque en lo importante.",
+      icon: <Database className="w-8 h-8 text-purple-500" />,
+      tags: ["Facturas", "Reportes"],
       colSpan: "lg:col-span-1",
     },
     {
-      title: "Bots Inteligentes",
-      description: "Asistentes virtuales que no solo responden, sino que ejecutan acciones en tus sistemas.",
-      icon: <Bot className="w-8 h-8 text-green-400" />,
-      tags: ["Slack", "Discord", "WhatsApp"],
+      title: "Consultoría & Desarrollo a Medida",
+      description: "Auditamos tu negocio para detectar dónde la IA puede generar más impacto y construimos la solución exacta que necesitas.",
+      icon: <Zap className="w-8 h-8 text-yellow-500" />,
+      tags: ["Personalización", "Estrategia", "Auditoria"],
       colSpan: "lg:col-span-2",
     },
   ];
@@ -48,7 +48,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold mb-4"
           >
-            Ingeniería de <span className="text-primary">Sistemas</span>
+            Potencia tu <span className="text-primary">Negocio con IA</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

@@ -163,15 +163,15 @@ const Hero = () => {
           <div className="flex items-center gap-6 text-sm text-muted-foreground pt-4">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-500" />
-              <span>Setup en 48h</span>
+              <span>Acompañamiento Estratégico</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-500" />
-              <span>Sin código complejo</span>
+              <span>Ahorro de Tiempo Real</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-500" />
-              <span>ROI garantizado</span>
+              <span>Resultados Auditables</span>
             </div>
           </div>
         </div>

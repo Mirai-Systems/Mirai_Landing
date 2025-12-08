@@ -10,7 +10,7 @@ const Footer = () => {
              <Link href="/">
               <a className="flex items-center gap-2 group cursor-pointer">
                 <img 
-                  src="https://res.cloudinary.com/dllawhmxq/image/upload/v1765044078/Logo_Mirai_Grande_htj7eg.png" 
+                  src="https://res.cloudinary.com/dllawhmxq/image/upload/v1765200761/Logo_Mirai_Grande_sin_fondo_biufhk.png" 
                   alt="MIRAI SYSTEMS Logo" 
                   className="h-8 w-auto" 
                 />

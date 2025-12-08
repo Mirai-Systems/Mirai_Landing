@@ -15,7 +15,6 @@ const Home = () => {
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/30">
       <Navbar />
       <Hero />
-      <StatsTicker />
       <Services />
       <UseCases />
       <Methodology />
