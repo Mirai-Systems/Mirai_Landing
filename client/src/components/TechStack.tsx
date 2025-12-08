@@ -29,7 +29,8 @@ const TechStack = () => {
           {techs.map((tech, index) => {
             const getSizeClass = (name: string) => {
               if (["n8n", "Notion", "Slack", "Stripe"].includes(name)) return "h-8";
-              if (["OpenAI", "Google Cloud"].includes(name)) return "h-16";
+              if (name === "OpenAI") return "h-14";
+              if (name === "Google Cloud") return "h-16";
               return "h-12";
             };
 
