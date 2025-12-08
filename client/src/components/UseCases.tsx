@@ -127,111 +127,112 @@ const UseCases = () => {
   };
 
   return (
-{/* 
-    <section id="cases" className="py-24 bg-muted/30 border-y border-border/50">
-      <div className="container px-4 md:px-6 mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Resultados Reales</h2>
-            <p className="text-muted-foreground text-lg">No vendemos humo. Vendemos tiempo recuperado.</p>
+    <>
+      {/* 
+      <section id="cases" className="py-24 bg-muted/30 border-y border-border/50">
+        <div className="container px-4 md:px-6 mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Resultados Reales</h2>
+              <p className="text-muted-foreground text-lg">No vendemos humo. Vendemos tiempo recuperado.</p>
+            </div>
+            
+            <div className="flex gap-2 bg-muted p-1 rounded-lg border border-border">
+              {cases.map((c, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveCase(i)}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
+                    activeCase === i 
+                      ? "bg-primary text-white shadow-lg" 
+                      : "text-muted-foreground hover:text-foreground hover:bg-background"
+                  }`}
+                >
+                  {c.title}
+                </button>
+              ))}
+            </div>
           </div>
-          
-          <div className="flex gap-2 bg-muted p-1 rounded-lg border border-border">
-            {cases.map((c, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveCase(i)}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
-                  activeCase === i 
-                    ? "bg-primary text-white shadow-lg" 
-                    : "text-muted-foreground hover:text-foreground hover:bg-background"
-                }`}
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeCase}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.3 }}
+                className="space-y-8"
               >
-                {c.title}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={activeCase}
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 20 }}
-              transition={{ duration: 0.3 }}
-              className="space-y-8"
-            >
-              <div className="space-y-4">
-                <div className="inline-block px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-sm font-medium">
-                  {cases[activeCase].metric}
-                </div>
-                <h3 className="text-3xl font-bold text-foreground">{cases[activeCase].title}</h3>
-                <p className="text-muted-foreground text-lg leading-relaxed">
-                  {cases[activeCase].description}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-6 bg-card rounded-xl border border-red-500/20 relative overflow-hidden shadow-sm">
-                  <div className="absolute top-0 right-0 p-2 opacity-20">
-                    <Clock className="w-12 h-12 text-red-500" />
+                <div className="space-y-4">
+                  <div className="inline-block px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-sm font-medium">
+                    {cases[activeCase].metric}
                   </div>
-                  <p className="text-sm text-red-500 font-medium mb-1">Antes</p>
-                  <p className="text-xl font-bold text-foreground/90">{cases[activeCase].before}</p>
+                  <h3 className="text-3xl font-bold text-foreground">{cases[activeCase].title}</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    {cases[activeCase].description}
+                  </p>
                 </div>
-                <div className="p-6 bg-primary/5 rounded-xl border border-primary/20 relative overflow-hidden shadow-sm">
-                   <div className="absolute top-0 right-0 p-2 opacity-20">
-                    <Zap className="w-12 h-12 text-primary" />
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-6 bg-card rounded-xl border border-red-500/20 relative overflow-hidden shadow-sm">
+                    <div className="absolute top-0 right-0 p-2 opacity-20">
+                      <Clock className="w-12 h-12 text-red-500" />
+                    </div>
+                    <p className="text-sm text-red-500 font-medium mb-1">Antes</p>
+                    <p className="text-xl font-bold text-foreground/90">{cases[activeCase].before}</p>
                   </div>
-                  <p className="text-sm text-primary font-medium mb-1">Después</p>
-                  <p className="text-xl font-bold text-foreground">{cases[activeCase].after}</p>
+                  <div className="p-6 bg-primary/5 rounded-xl border border-primary/20 relative overflow-hidden shadow-sm">
+                     <div className="absolute top-0 right-0 p-2 opacity-20">
+                      <Zap className="w-12 h-12 text-primary" />
+                    </div>
+                    <p className="text-sm text-primary font-medium mb-1">Después</p>
+                    <p className="text-xl font-bold text-foreground">{cases[activeCase].after}</p>
+                  </div>
                 </div>
+
+                <div className="flex gap-8 pt-4">
+                  <div className="flex items-center gap-3">
+                     <div className="p-3 rounded-full bg-green-500/10 text-green-600 dark:text-green-400">
+                       <DollarSign className="w-6 h-6" />
+                     </div>
+                     <div>
+                       <div className="text-2xl font-bold text-foreground">${cases[activeCase].savedMoney}/mo</div>
+                       <div className="text-xs text-muted-foreground uppercase tracking-wider">Ahorro estimado</div>
+                     </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                     <div className="p-3 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400">
+                       <Clock className="w-6 h-6" />
+                     </div>
+                     <div>
+                       <div className="text-2xl font-bold text-foreground">{cases[activeCase].savedHours}h/mo</div>
+                       <div className="text-xs text-muted-foreground uppercase tracking-wider">Recuperadas</div>
+                     </div>
+                  </div>
+                </div>
+
+                <Button className="mt-6 bg-foreground text-background hover:bg-foreground/90 rounded-full px-8">
+                  Calcula tu ahorro potencial <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="h-[400px] w-full bg-card border border-border rounded-2xl p-6 relative shadow-sm">
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-0 pointer-events-none" />
+              <h4 className="text-sm font-medium text-muted-foreground mb-6 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-primary" />
+                Crecimiento de Eficiencia
+              </h4>
+              <div className="h-[300px] w-full relative z-10">
+                 <Line options={chartOptions} data={currentData} />
               </div>
-
-              <div className="flex gap-8 pt-4">
-                <div className="flex items-center gap-3">
-                   <div className="p-3 rounded-full bg-green-500/10 text-green-600 dark:text-green-400">
-                     <DollarSign className="w-6 h-6" />
-                   </div>
-                   <div>
-                     <div className="text-2xl font-bold text-foreground">${cases[activeCase].savedMoney}/mo</div>
-                     <div className="text-xs text-muted-foreground uppercase tracking-wider">Ahorro estimado</div>
-                   </div>
-                </div>
-                <div className="flex items-center gap-3">
-                   <div className="p-3 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400">
-                     <Clock className="w-6 h-6" />
-                   </div>
-                   <div>
-                     <div className="text-2xl font-bold text-foreground">{cases[activeCase].savedHours}h/mo</div>
-                     <div className="text-xs text-muted-foreground uppercase tracking-wider">Recuperadas</div>
-                   </div>
-                </div>
-              </div>
-
-              <Button className="mt-6 bg-foreground text-background hover:bg-foreground/90 rounded-full px-8">
-                Calcula tu ahorro potencial <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-            </motion.div>
-          </AnimatePresence>
-
-          <div className="h-[400px] w-full bg-card border border-border rounded-2xl p-6 relative shadow-sm">
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent z-0 pointer-events-none" />
-            <h4 className="text-sm font-medium text-muted-foreground mb-6 flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-primary" />
-              Crecimiento de Eficiencia
-            </h4>
-            <div className="h-[300px] w-full relative z-10">
-               <Line options={chartOptions} data={currentData} />
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    */}
-    <></>
+      </section>
+      */}
+    </>
   );
 };
 
