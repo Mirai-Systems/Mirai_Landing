@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 const TechStack = () => {
   const techs = [
     { name: "n8n", icon: "https://res.cloudinary.com/dllawhmxq/image/upload/v1765205810/n8n_1_r7mps4.png" }, // Placeholder will need replacement if not valid, using text for now or generic
-    { name: "OpenAI", icon: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" },
+    { name: "OpenAI", icon: "https://res.cloudinary.com/dllawhmxq/image/upload/v1765206338/openai-old-logo_ukxhni.png" },
     { name: "Google Cloud", icon: "https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" },
     { name: "HubSpot", icon: "https://res.cloudinary.com/dllawhmxq/image/upload/v1765205917/326419_s69twf.png" },
     { name: "Airtable", icon: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Airtable_Logo.svg" },
-    { name: "Notion", icon: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" },
+    { name: "Notion", icon: "https://res.cloudinary.com/dllawhmxq/image/upload/v1765206322/notion_logo_icon_145025_vm5g5r.png" },
     { name: "Slack", icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" },
     { name: "Stripe", icon: "https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" },
   ];
