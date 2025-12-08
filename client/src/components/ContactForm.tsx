@@ -42,16 +42,31 @@ const ContactForm = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    console.log(values);
-    setIsSubmitting(false);
-    setIsSuccess(true);
+    
+    try {
+      const response = await fetch("https://n8n-n8n.0qxgze.easypanel.host/webhook/formulario-web", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
 
-    // Redirect to calendar after 3 seconds
-    setTimeout(() => {
-      window.location.href = "http://cal.com/mirai-systems/web";
-    }, 3000);
+      if (response.ok) {
+        setIsSuccess(true);
+        // Redirect to calendar after 3 seconds
+        setTimeout(() => {
+          window.location.href = "http://cal.com/mirai-systems/web";
+        }, 3000);
+      } else {
+        alert("Hubo un error, por favor escríbenos directamente");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Hubo un error, por favor escríbenos directamente");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const nextStep = async () => {
@@ -258,11 +273,16 @@ const ContactForm = () => {
                         </Button>
                         <Button type="submit" disabled={isSubmitting} className="w-full bg-primary text-white">
                           {isSubmitting ? (
-                            <Loader2 className="mr-2 w-4 h-4 animate-spin" />
+                            <>
+                              <Loader2 className="mr-2 w-4 h-4 animate-spin" />
+                              Enviando...
+                            </>
                           ) : (
-                            <Send className="mr-2 w-4 h-4" />
+                            <>
+                              <Send className="mr-2 w-4 h-4" />
+                              Enviar Solicitud
+                            </>
                           )}
-                          Enviar Solicitud
                         </Button>
                       </div>
                     </motion.div>
