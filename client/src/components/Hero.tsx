@@ -209,7 +209,7 @@ const Hero = () => {
                  <div className="h-8 w-0.5 bg-border mx-8 relative">
                     <motion.div 
                       animate={{ y: [0, 32] }}
-                      transition={{ duration: 1.5, repeat: Infinity, ease: "linear", delay: 0.75 }}
+                      transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
                       className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_10px_#007BFF]"
                     />
                  </div>
