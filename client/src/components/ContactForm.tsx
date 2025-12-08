@@ -47,6 +47,11 @@ const ContactForm = () => {
     console.log(values);
     setIsSubmitting(false);
     setIsSuccess(true);
+
+    // Redirect to calendar after 3 seconds
+    setTimeout(() => {
+      window.location.href = "http://cal.com/mirai-systems/web";
+    }, 3000);
   };
 
   const nextStep = async () => {
@@ -89,9 +94,9 @@ const ContactForm = () => {
               <div className="w-20 h-20 bg-green-500/20 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Check className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">¡Datos Recibidos!</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-2">¡Datos recibidos! Redirigiendo a la agenda...</h3>
               <p className="text-muted-foreground">
-                Nuestro sistema está procesando tu solicitud. Te contactaremos en menos de 24h.
+                Serás redirigido automáticamente en unos segundos.
               </p>
               <Button 
                 className="mt-8" 

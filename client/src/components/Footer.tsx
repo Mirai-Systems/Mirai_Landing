@@ -57,8 +57,8 @@ const Footer = () => {
             © {new Date().getFullYear()} MIRAI SYSTEMS. Todos los derechos reservados.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-foreground transition-colors">Términos</a>
+            <a href="#" className="hover:text-foreground transition-colors cursor-not-allowed opacity-50" onClick={(e) => e.preventDefault()}>Privacidad</a>
+            <a href="#" className="hover:text-foreground transition-colors cursor-not-allowed opacity-50" onClick={(e) => e.preventDefault()}>Términos</a>
           </div>
         </div>
       </div>
