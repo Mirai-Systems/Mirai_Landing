@@ -36,7 +36,7 @@ const TechStack = () => {
               <img 
                 src={tech.icon} 
                 alt={tech.name} 
-                className="h-8 w-auto max-w-[100px] object-contain brightness-0" 
+                className="h-12 w-auto object-contain mx-auto mix-blend-multiply" 
               />
             </motion.div>
           ))}

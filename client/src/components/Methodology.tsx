@@ -79,7 +79,7 @@ const Methodology = () => {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ margin: "-100px" }}
                     transition={{ duration: 0.5 }}
-                    className="max-w-md"
+                    className="max-w-md md:w-[40%] w-full md:px-4"
                     style={{ marginLeft: index % 2 === 0 ? "auto" : "0" }}
                   >
                     <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-muted border border-border text-primary mb-4 shadow-sm ${
