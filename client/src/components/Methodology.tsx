@@ -73,12 +73,14 @@ const Methodology = () => {
                   />
                 </div>
 
-                <div className={`flex-1 pl-16 md:pl-0 ${index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16"}`}>
+                <div className={`flex-1 pl-16 md:pl-0 ${index % 2 === 0 ? "md:pr-24 md:text-right" : "md:pl-24"}`}>
                   <motion.div
                     initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ margin: "-100px" }}
                     transition={{ duration: 0.5 }}
+                    className="max-w-md"
+                    style={{ marginLeft: index % 2 === 0 ? "auto" : "0" }}
                   >
                     <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-muted border border-border text-primary mb-4 shadow-sm ${
                       index % 2 === 0 ? "md:ml-auto" : ""

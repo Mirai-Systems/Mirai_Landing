@@ -17,7 +17,7 @@ const TechStack = () => {
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
           <h3 className="text-xl font-semibold text-foreground">
-            Powering your stack with <span className="text-primary">best-in-class</span> integrations
+            Se integra perfectamente con las <span className="text-primary">herramientas que ya usas</span>
           </h3>
           <div className="px-3 py-1 rounded-full bg-muted border border-border text-xs font-mono text-muted-foreground flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -25,18 +25,18 @@ const TechStack = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-items-center opacity-70">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center justify-items-center">
           {techs.map((tech, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 1.1, opacity: 1, filter: "grayscale(0%)" }}
-              className="w-full h-12 flex items-center justify-center filter grayscale transition-all duration-300 opacity-60 hover:opacity-100 cursor-pointer"
+              whileHover={{ scale: 1.1, filter: "brightness(0) grayscale(0%)" }}
+              className="w-full h-12 flex items-center justify-center transition-all duration-300 opacity-60 hover:opacity-100 cursor-pointer"
             >
               {/* Using text fallback if images fail, but intended to be logos */}
               <img 
                 src={tech.icon} 
                 alt={tech.name} 
-                className="max-h-8 max-w-[100px] object-contain" 
+                className="h-8 w-auto max-w-[100px] object-contain brightness-0" 
               />
             </motion.div>
           ))}

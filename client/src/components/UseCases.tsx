@@ -127,6 +127,7 @@ const UseCases = () => {
   };
 
   return (
+{/* 
     <section id="cases" className="py-24 bg-muted/30 border-y border-border/50">
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
@@ -229,6 +230,8 @@ const UseCases = () => {
         </div>
       </div>
     </section>
+    */}
+    <></>
   );
 };
 

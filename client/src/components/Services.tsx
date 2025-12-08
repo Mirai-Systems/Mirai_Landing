@@ -61,7 +61,7 @@ const Services = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 auto-rows-fr">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -69,12 +69,12 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`${service.colSpan} group`}
+              className="group h-full"
             >
-              <Card className="h-full bg-card border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,123,255,0.15)] overflow-hidden relative">
+              <Card className="h-full bg-card border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,123,255,0.15)] overflow-hidden relative flex flex-col">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <CardHeader>
+                <CardHeader className="p-8 pb-4">
                   <div className="flex justify-between items-start">
                     <div className="p-3 bg-muted rounded-lg group-hover:scale-110 transition-transform duration-300 border border-border group-hover:border-primary/30 text-foreground">
                       {service.icon}
@@ -85,8 +85,8 @@ const Services = () => {
                     {service.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base mb-6 text-muted-foreground">
+                <CardContent className="p-8 pt-0 flex flex-col flex-1">
+                  <CardDescription className="text-base mb-6 text-muted-foreground flex-1">
                     {service.description}
                   </CardDescription>
                   
