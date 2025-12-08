@@ -35,10 +35,10 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-foreground mb-6">Soluciones</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Auditoría de Procesos</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Desarrollo n8n</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Integración IA</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Sincronización CRM</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Chatbots de IA & Ventas</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Marketing & Growth IA</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Automatización de Procesos</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Consultoría a Medida</a></li>
             </ul>
           </div>
 
@@ -46,8 +46,7 @@ const Footer = () => {
             <h4 className="font-bold text-foreground mb-6">Empresa</h4>
             <ul className="space-y-4">
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Sobre Nosotros</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Casos de Éxito</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Blog</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Metodología</a></li>
               <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Contacto</a></li>
             </ul>
           </div>

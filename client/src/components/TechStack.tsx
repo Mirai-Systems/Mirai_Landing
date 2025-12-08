@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 
 const TechStack = () => {
   const techs = [
-    { name: "n8n", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/N8n-logo-black.svg/2560px-N8n-logo-black.svg.png" }, // Placeholder will need replacement if not valid, using text for now or generic
+    { name: "n8n", icon: "https://res.cloudinary.com/dllawhmxq/image/upload/v1765205810/n8n_1_r7mps4.png" }, // Placeholder will need replacement if not valid, using text for now or generic
     { name: "OpenAI", icon: "https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" },
     { name: "Google Cloud", icon: "https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" },
-    { name: "HubSpot", icon: "https://upload.wikimedia.org/wikipedia/commons/1/15/HubSpot_Logo.svg" },
+    { name: "HubSpot", icon: "https://res.cloudinary.com/dllawhmxq/image/upload/v1765205917/326419_s69twf.png" },
     { name: "Airtable", icon: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Airtable_Logo.svg" },
     { name: "Notion", icon: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png" },
     { name: "Slack", icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" },

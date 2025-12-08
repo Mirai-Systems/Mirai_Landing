@@ -46,59 +46,44 @@ const Methodology = () => {
           </p>
         </div>
 
-        <div className="relative max-w-4xl mx-auto">
-          {/* Central Line */}
-          <div className="absolute left-[20px] md:left-1/2 top-0 bottom-0 w-1 bg-border/50 -translate-x-1/2">
-            <motion.div 
-              style={{ scaleY: scrollYProgress }}
-              className="absolute top-0 left-0 w-full bg-primary origin-top"
-            />
-          </div>
-
-          <div className="space-y-12 md:space-y-24">
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-12">
             {steps.map((step, index) => (
               <div 
                 key={step.id} 
-                className={`flex flex-col md:flex-row items-start md:items-center gap-8 relative ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
+                className="flex flex-col md:flex-row gap-8 items-start group"
               >
-                {/* Node on the line */}
-                <div className="absolute left-[20px] md:left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-background border-4 border-card z-10 flex items-center justify-center shadow-lg">
-                  <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ margin: "-100px" }}
-                    className="w-4 h-4 bg-primary rounded-full"
-                  />
+                {/* Number & Line */}
+                <div className="flex flex-col items-center flex-shrink-0 md:w-24 relative">
+                   <span className="text-5xl font-bold text-primary/20 group-hover:text-primary transition-colors duration-300">
+                     0{step.id}
+                   </span>
+                   {index !== steps.length - 1 && (
+                     <div className="w-0.5 h-24 bg-primary/20 mt-4 group-hover:bg-primary transition-colors duration-300" />
+                   )}
                 </div>
 
-                <div className={`flex-1 pl-16 md:pl-0 ${index % 2 === 0 ? "md:pr-28 md:text-right" : "md:pl-28"}`}>
+                {/* Content */}
+                <div className="flex-1 pt-2">
                   <motion.div
-                    initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                    initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ margin: "-100px" }}
-                    transition={{ duration: 0.5 }}
-                    className="max-w-md md:w-[40%] w-full md:px-4"
-                    style={{ marginLeft: index % 2 === 0 ? "auto" : "0" }}
+                    viewport={{ margin: "-50px" }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-muted border border-border text-primary mb-4 shadow-sm ${
-                      index % 2 === 0 ? "md:ml-auto" : ""
-                    }`}>
-                      {step.icon}
+                    <div className="flex items-center gap-4 mb-3">
+                       <div className="p-2 rounded-lg bg-primary/5 text-primary">
+                         {step.icon}
+                       </div>
+                       <h3 className="text-2xl font-bold text-foreground">
+                         {step.title}
+                       </h3>
                     </div>
-                    <h3 className="text-2xl font-bold mb-3 text-foreground">
-                      <span className="text-primary/50 mr-2">0{step.id}.</span>
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground text-lg leading-relaxed">
+                    <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
                       {step.description}
                     </p>
                   </motion.div>
                 </div>
-                
-                {/* Empty space for the other side */}
-                <div className="hidden md:block flex-1" />
               </div>
             ))}
           </div>
