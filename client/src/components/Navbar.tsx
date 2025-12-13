@@ -1,13 +1,18 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Terminal, ArrowRight } from "lucide-react";
+import { Menu, X, Terminal, ArrowRight, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [lang, setLang] = useState("ES");
+
+  const toggleLang = () => {
+    setLang(prev => prev === "ES" ? "EN" : "ES");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,6 +60,16 @@ const Navbar = () => {
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
             </a>
           ))}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-muted-foreground hover:text-primary gap-2"
+            onClick={toggleLang}
+          >
+            <Globe className="w-4 h-4" />
+            {lang}
+          </Button>
+
           <Button 
             variant="default" 
             className="bg-primary hover:bg-primary/90 text-white rounded-full px-6 shadow-[0_0_15px_rgba(0,123,255,0.3)] hover:shadow-[0_0_25px_rgba(0,123,255,0.5)] transition-all duration-300"
@@ -98,6 +113,18 @@ const Navbar = () => {
                   {link.name}
                 </a>
               ))}
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="w-full justify-start text-muted-foreground hover:text-primary gap-2"
+                  onClick={toggleLang}
+                >
+                  <Globe className="w-4 h-4" />
+                  {lang === "ES" ? "Cambiar a Inglés" : "Switch to Spanish"}
+                </Button>
+              </div>
+
               <Button className="w-full bg-primary text-white">
                 Solicitar Demo
               </Button>
