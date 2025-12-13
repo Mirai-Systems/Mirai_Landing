@@ -4,15 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Terminal, ArrowRight, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [lang, setLang] = useState("ES");
-
-  const toggleLang = () => {
-    setLang(prev => prev === "ES" ? "EN" : "ES");
-  };
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,9 +20,9 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "Servicios", href: "#services" },
-    { name: "Metodología", href: "#methodology" },
-    { name: "Contacto", href: "#contact" },
+    { name: t.nav.services, href: "#services" },
+    { name: t.nav.methodology, href: "#methodology" },
+    { name: t.nav.contact, href: "#contact" },
   ];
 
   return (
@@ -64,10 +61,10 @@ const Navbar = () => {
             variant="ghost"
             size="sm"
             className="text-muted-foreground hover:text-primary gap-2"
-            onClick={toggleLang}
+            onClick={toggleLanguage}
           >
             <Globe className="w-4 h-4" />
-            {lang}
+            {language}
           </Button>
 
           <Button 
@@ -80,7 +77,7 @@ const Navbar = () => {
               }
             }}
           >
-            Solicitar Demo <ArrowRight className="ml-2 w-4 h-4" />
+            {t.nav.requestDemo} <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </div>
 
@@ -118,15 +115,15 @@ const Navbar = () => {
                   variant="ghost"
                   size="sm"
                   className="w-full justify-start text-muted-foreground hover:text-primary gap-2"
-                  onClick={toggleLang}
+                  onClick={toggleLanguage}
                 >
                   <Globe className="w-4 h-4" />
-                  {lang === "ES" ? "Cambiar a Inglés" : "Switch to Spanish"}
+                  {t.nav.switchLang}
                 </Button>
               </div>
 
               <Button className="w-full bg-primary text-white">
-                Solicitar Demo
+                {t.nav.requestDemo}
               </Button>
             </div>
           </motion.div>

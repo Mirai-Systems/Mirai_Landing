@@ -1,38 +1,30 @@
 import { motion } from "framer-motion";
 import { Database, Bot, Zap, ArrowUpRight, Instagram } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Services = () => {
-  const services = [
-    {
-      title: "Chatbots de IA & Ventas",
-      description: "Asistentes entrenados con tu información que atienden clientes, resuelven dudas y cierran citas automáticamente en tu web, redes sociales o WhatsApp. Convierte visitas en ventas mientras duermes.",
-      icon: <Bot className="w-8 h-8 text-blue-500" />,
-      tags: ["WhatsApp", "Soporte 24/7", "Sin Errores"],
-      colSpan: "lg:col-span-2",
-    },
-    {
-      title: "Prospección y Marketing IA",
-      description: "Sistemas que redactan correos personalizados, crean contenido para redes o cualifican leads entrantes sin que muevas un dedo.",
-      icon: <Instagram className="w-8 h-8 text-pink-500" />,
-      tags: ["Email", "Leads"],
-      colSpan: "lg:col-span-1",
-    },
-    {
-      title: "Automatización de Procesos",
-      description: "Eliminamos el 'copiar y pegar'. Facturas, contratos y gestión de pedidos se hacen solos para que tu equipo se enfoque en lo importante.",
-      icon: <Database className="w-8 h-8 text-purple-500" />,
-      tags: ["Facturas", "Reportes"],
-      colSpan: "lg:col-span-1",
-    },
-    {
-      title: "Consultoría & Desarrollo a Medida",
-      description: "Auditamos tu negocio para detectar dónde la IA puede generar más impacto y construimos la solución exacta que necesitas.",
-      icon: <Zap className="w-8 h-8 text-yellow-500" />,
-      tags: ["Personalización", "Estrategia", "Auditoria"],
-      colSpan: "lg:col-span-2",
-    },
+  const { t } = useLanguage();
+
+  const icons = [
+    <Bot className="w-8 h-8 text-blue-500" />,
+    <Instagram className="w-8 h-8 text-pink-500" />,
+    <Database className="w-8 h-8 text-purple-500" />,
+    <Zap className="w-8 h-8 text-yellow-500" />
   ];
+
+  const colSpans = [
+    "lg:col-span-2",
+    "lg:col-span-1",
+    "lg:col-span-1",
+    "lg:col-span-2"
+  ];
+
+  const services = t.services.items.map((item, index) => ({
+    ...item,
+    icon: icons[index],
+    colSpan: colSpans[index]
+  }));
 
   return (
     <section id="services" className="py-24 bg-background relative overflow-hidden">
@@ -48,7 +40,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-3xl md:text-5xl font-bold mb-4"
           >
-            Potencia tu <span className="text-primary">Negocio con IA</span>
+            {t.services.title} <span className="text-primary">{t.services.titleHighlight}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +49,7 @@ const Services = () => {
             transition={{ delay: 0.1 }}
             className="text-muted-foreground max-w-2xl mx-auto text-lg"
           >
-            Construimos la infraestructura digital invisible que escala tu negocio sin aumentar tu plantilla.
+            {t.services.subtitle}
           </motion.p>
         </div>
 

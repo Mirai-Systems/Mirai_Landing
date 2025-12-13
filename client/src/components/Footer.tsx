@@ -1,7 +1,10 @@
 import { Link } from "wouter";
 import { Terminal, Twitter, Linkedin, Github } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-background border-t border-border pt-16 pb-8">
       <div className="container px-4 md:px-6 mx-auto">
@@ -17,7 +20,7 @@ const Footer = () => {
               </a>
             </Link>
             <p className="text-muted-foreground max-w-sm">
-              Ingeniería de automatización para empresas que valoran la eficiencia, la escalabilidad y el ROI.
+              {t.footer.description}
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-full bg-muted flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-white transition-all">
@@ -33,32 +36,32 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-bold text-foreground mb-6">Soluciones</h4>
+            <h4 className="font-bold text-foreground mb-6">{t.footer.solutions}</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Chatbots de IA & Ventas</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Marketing & Growth IA</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Automatización de Procesos</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Consultoría a Medida</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t.footer.links.chatbots}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t.footer.links.marketing}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t.footer.links.automation}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t.footer.links.consulting}</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-bold text-foreground mb-6">Empresa</h4>
+            <h4 className="font-bold text-foreground mb-6">{t.footer.company}</h4>
             <ul className="space-y-4">
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Sobre Nosotros</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Metodología</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">Contacto</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t.footer.links.about}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t.footer.links.methodology}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t.footer.links.contact}</a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} MIRAI SYSTEMS. Todos los derechos reservados.
+            © {new Date().getFullYear()} MIRAI SYSTEMS. {t.footer.rights}
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors cursor-not-allowed opacity-50" onClick={(e) => e.preventDefault()}>Privacidad</a>
-            <a href="#" className="hover:text-foreground transition-colors cursor-not-allowed opacity-50" onClick={(e) => e.preventDefault()}>Términos</a>
+            <a href="#" className="hover:text-foreground transition-colors cursor-not-allowed opacity-50" onClick={(e) => e.preventDefault()}>{t.footer.links.privacy}</a>
+            <a href="#" className="hover:text-foreground transition-colors cursor-not-allowed opacity-50" onClick={(e) => e.preventDefault()}>{t.footer.links.terms}</a>
           </div>
         </div>
       </div>

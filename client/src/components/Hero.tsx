@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, PlayCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/context/LanguageContext";
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { t } = useLanguage();
 
   // Particle animation effect
   useEffect(() => {
@@ -117,16 +119,16 @@ const Hero = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              Inteligencia Artificial en tu Empresa
+              {t.hero.badge}
             </div>
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight leading-tight text-foreground">
-              Automatización que <br />
+              {t.hero.titlePart1} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007BFF] to-[#002060]">
-                Rentabiliza
+                {t.hero.titlePart2}
               </span>
-              , IA que <br />
+              {t.hero.titlePart3} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#007BFF] to-[#00BFFF]">
-                Ejecuta
+                {t.hero.titlePart4}
               </span>
             </h1>
           </motion.div>
@@ -138,11 +140,7 @@ const Hero = () => {
             className="h-8"
           >
             <TypewriterText
-              texts={[
-                "Ahorra 20h semanales",
-                "Elimina errores manuales",
-                "Maximiza tu ROI",
-              ]}
+              texts={t.hero.typewriter}
             />
           </motion.div>
 
@@ -152,9 +150,7 @@ const Hero = () => {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="text-lg text-muted-foreground max-w-xl"
           >
-            Ayudamos a PYMES, Startups y pequeños negocios a implementar
-            Inteligencia Artificial para ahorrar costos, minimizar errores
-            humanos y ganar tiempo y productividad
+            {t.hero.description}
           </motion.p>
 
           <motion.div
@@ -173,22 +169,22 @@ const Hero = () => {
                 }
               }}
             >
-              Solicitar Demo
+              {t.nav.requestDemo}
             </Button>
           </motion.div>
 
           <div className="flex items-center gap-6 text-sm text-muted-foreground pt-4">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-500" />
-              <span>Acompañamiento Estratégico</span>
+              <span>{t.hero.checks.strategic}</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-500" />
-              <span>Ahorro de Tiempo Real</span>
+              <span>{t.hero.checks.time}</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-green-500" />
-              <span>Resultados Auditables</span>
+              <span>{t.hero.checks.results}</span>
             </div>
           </div>
         </div>
@@ -218,7 +214,7 @@ const Hero = () => {
               <div className="space-y-4">
                 <WorkflowNode
                   icon="💬"
-                  label="Mensaje en WhatsApp o Instagram"
+                  label={t.hero.workflow.msg}
                   status="success"
                 />
                 <div className="h-8 w-0.5 bg-border mx-8 relative">
@@ -234,7 +230,7 @@ const Hero = () => {
                 </div>
                 <WorkflowNode
                   icon="🤖"
-                  label="Chatbot con IA"
+                  label={t.hero.workflow.bot}
                   status="processing"
                 />
                 <div className="h-8 w-0.5 bg-border mx-8 relative">
@@ -250,7 +246,7 @@ const Hero = () => {
                 </div>
                 <WorkflowNode
                   icon="📅"
-                  label="Cita agendada en tu calendario"
+                  label={t.hero.workflow.calendar}
                   status="pending"
                 />
               </div>

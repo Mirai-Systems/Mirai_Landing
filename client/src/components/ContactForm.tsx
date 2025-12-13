@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -9,19 +9,21 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { cn } from "@/lib/utils";
-
-const formSchema = z.object({
-  tools: z.array(z.string()).min(1, "Selecciona al menos una herramienta"),
-  bottleneck: z.string().min(10, "Cuéntanos un poco más sobre tu problema"),
-  name: z.string().min(2, "Nombre requerido"),
-  email: z.string().email("Email inválido"),
-  company: z.string().optional(),
-});
+import { useLanguage } from "@/context/LanguageContext";
 
 const ContactForm = () => {
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const { t } = useLanguage();
+
+  const formSchema = useMemo(() => z.object({
+    tools: z.array(z.string()).min(1, t.contact.form.tools.error),
+    bottleneck: z.string().min(10, t.contact.form.bottleneck.error),
+    name: z.string().min(2, t.contact.form.validation.name),
+    email: z.string().email(t.contact.form.validation.email),
+    company: z.string().optional(),
+  }), [t]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -59,11 +61,11 @@ const ContactForm = () => {
           window.location.href = "http://cal.com/mirai-systems/web";
         }, 3000);
       } else {
-        alert("Hubo un error, por favor escríbenos directamente");
+        alert(t.contact.form.error);
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Hubo un error, por favor escríbenos directamente");
+      alert(t.contact.form.error);
     } finally {
       setIsSubmitting(false);
     }
@@ -93,9 +95,9 @@ const ContactForm = () => {
     <section id="contact" className="py-24 bg-background border-t border-border">
       <div className="container px-4 md:px-6 mx-auto max-w-3xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">Hablemos de tu Proyecto</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-foreground">{t.contact.title}</h2>
           <p className="text-muted-foreground text-lg">
-            Cuéntanos tus retos actuales. Analizaremos tu caso y te contactaremos para agendar una sesión de estrategia.
+            {t.contact.subtitle}
           </p>
         </div>
 
@@ -109,9 +111,9 @@ const ContactForm = () => {
               <div className="w-20 h-20 bg-green-500/20 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Check className="w-10 h-10" />
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">¡Datos recibidos! Redirigiendo a la agenda...</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-2">{t.contact.form.success.title}</h3>
               <p className="text-muted-foreground">
-                Serás redirigido automáticamente en unos segundos.
+                {t.contact.form.success.message}
               </p>
               <Button 
                 className="mt-8" 
@@ -122,7 +124,7 @@ const ContactForm = () => {
                   form.reset();
                 }}
               >
-                Nueva solicitud
+                {t.contact.form.success.new}
               </Button>
             </motion.div>
           ) : (
@@ -155,7 +157,7 @@ const ContactForm = () => {
                       className="space-y-6"
                     >
                       <div className="space-y-4">
-                        <h3 className="text-xl font-semibold text-foreground">¿Qué herramientas usas hoy?</h3>
+                        <h3 className="text-xl font-semibold text-foreground">{t.contact.form.tools.question}</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                           {tools.map((tool) => (
                             <div
@@ -177,7 +179,7 @@ const ContactForm = () => {
                         )}
                       </div>
                       <Button type="button" onClick={nextStep} className="w-full">
-                        Siguiente <ChevronRight className="ml-2 w-4 h-4" />
+                        {t.contact.form.details.next} <ChevronRight className="ml-2 w-4 h-4" />
                       </Button>
                     </motion.div>
                   )}
@@ -195,10 +197,10 @@ const ContactForm = () => {
                         name="bottleneck"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel className="text-xl font-semibold text-foreground">¿Cuál es tu mayor cuello de botella?</FormLabel>
+                            <FormLabel className="text-xl font-semibold text-foreground">{t.contact.form.bottleneck.question}</FormLabel>
                             <FormControl>
                               <Textarea 
-                                placeholder="Ej: Pierdo 5 horas a la semana copiando datos de Excel a HubSpot..." 
+                                placeholder={t.contact.form.bottleneck.placeholder}
                                 className="min-h-[150px] bg-muted border-border focus:border-primary text-foreground"
                                 {...field} 
                               />
@@ -209,10 +211,10 @@ const ContactForm = () => {
                       />
                       <div className="flex gap-4">
                         <Button type="button" variant="outline" onClick={() => setStep(1)} className="w-full">
-                          Atrás
+                          {t.contact.form.details.back}
                         </Button>
                         <Button type="button" onClick={nextStep} className="w-full">
-                          Siguiente <ChevronRight className="ml-2 w-4 h-4" />
+                          {t.contact.form.details.next} <ChevronRight className="ml-2 w-4 h-4" />
                         </Button>
                       </div>
                     </motion.div>
@@ -226,15 +228,15 @@ const ContactForm = () => {
                       exit={{ opacity: 0, x: -20 }}
                       className="space-y-4"
                     >
-                      <h3 className="text-xl font-semibold mb-4 text-foreground">Tus datos de contacto</h3>
+                      <h3 className="text-xl font-semibold mb-4 text-foreground">{t.contact.form.details.title}</h3>
                       <FormField
                         control={form.control}
                         name="name"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Nombre</FormLabel>
+                            <FormLabel>{t.contact.form.details.name}</FormLabel>
                             <FormControl>
-                              <Input placeholder="Tu nombre" className="bg-muted border-border text-foreground" {...field} />
+                              <Input placeholder={t.contact.form.details.namePlaceholder} className="bg-muted border-border text-foreground" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -245,9 +247,9 @@ const ContactForm = () => {
                         name="email"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Email Corporativo</FormLabel>
+                            <FormLabel>{t.contact.form.details.email}</FormLabel>
                             <FormControl>
-                              <Input placeholder="tu@empresa.com" className="bg-muted border-border text-foreground" {...field} />
+                              <Input placeholder={t.contact.form.details.emailPlaceholder} className="bg-muted border-border text-foreground" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -258,9 +260,9 @@ const ContactForm = () => {
                         name="company"
                         render={({ field }) => (
                           <FormItem>
-                            <FormLabel>Empresa (Opcional)</FormLabel>
+                            <FormLabel>{t.contact.form.details.company}</FormLabel>
                             <FormControl>
-                              <Input placeholder="Nombre de tu empresa" className="bg-muted border-border text-foreground" {...field} />
+                              <Input placeholder={t.contact.form.details.companyPlaceholder} className="bg-muted border-border text-foreground" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -269,18 +271,18 @@ const ContactForm = () => {
                       
                       <div className="flex gap-4 mt-6">
                         <Button type="button" variant="outline" onClick={() => setStep(2)} className="w-full">
-                          Atrás
+                          {t.contact.form.details.back}
                         </Button>
                         <Button type="submit" disabled={isSubmitting} className="w-full bg-primary text-white">
                           {isSubmitting ? (
                             <>
                               <Loader2 className="mr-2 w-4 h-4 animate-spin" />
-                              Enviando...
+                              {t.contact.form.details.submitting}
                             </>
                           ) : (
                             <>
                               <Send className="mr-2 w-4 h-4" />
-                              Enviar Solicitud
+                              {t.contact.form.details.submit}
                             </>
                           )}
                         </Button>

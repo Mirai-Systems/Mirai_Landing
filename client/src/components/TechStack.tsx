@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 const TechStack = () => {
+  const { t } = useLanguage();
   const techs = [
     { name: "n8n", icon: "https://res.cloudinary.com/dllawhmxq/image/upload/v1765205810/n8n_1_r7mps4.png" }, // Placeholder will need replacement if not valid, using text for now or generic
     { name: "OpenAI", icon: "https://res.cloudinary.com/dllawhmxq/image/upload/v1765206338/openai-old-logo_ukxhni.png" },
@@ -17,7 +19,7 @@ const TechStack = () => {
       <div className="container px-4 md:px-6 mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between mb-12 gap-6">
           <h3 className="text-xl font-semibold text-foreground">
-            Se integra perfectamente con las <span className="text-primary">herramientas que ya usas</span>
+            {t.techStack.title} <span className="text-primary">{t.techStack.highlight}</span>
           </h3>
           <div className="px-3 py-1 rounded-full bg-muted border border-border text-xs font-mono text-muted-foreground flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
