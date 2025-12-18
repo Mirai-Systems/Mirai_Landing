@@ -60,7 +60,9 @@ const Footer = () => {
             © {new Date().getFullYear()} MIRAI SYSTEMS. {t.footer.rights}
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <a href="#" className="hover:text-foreground transition-colors cursor-not-allowed opacity-50" onClick={(e) => e.preventDefault()}>{t.footer.links.privacy}</a>
+            <Link href="/privacy">
+              <a className="hover:text-foreground transition-colors">{t.footer.links.privacy}</a>
+            </Link>
             <a href="#" className="hover:text-foreground transition-colors cursor-not-allowed opacity-50" onClick={(e) => e.preventDefault()}>{t.footer.links.terms}</a>
           </div>
         </div>
