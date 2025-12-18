@@ -137,6 +137,12 @@ export const translations = {
         terms: "Términos"
       },
       rights: "Todos los derechos reservados."
+    },
+    notFound: {
+      title: "404",
+      subtitle: "Página No Encontrada",
+      description: "Parece que te has perdido en el flujo de automatización. La página que buscas no existe o ha sido movida.",
+      button: "Volver al Inicio"
     }
   },
   EN: {
@@ -277,6 +283,12 @@ export const translations = {
         terms: "Terms"
       },
       rights: "All rights reserved."
+    },
+    notFound: {
+      title: "404",
+      subtitle: "Page Not Found",
+      description: "It seems you've gotten lost in the automation flow. The page you are looking for does not exist or has been moved.",
+      button: "Return Home"
     }
   }
 };
