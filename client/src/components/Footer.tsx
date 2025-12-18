@@ -63,7 +63,9 @@ const Footer = () => {
             <Link href="/privacy">
               <a className="hover:text-foreground transition-colors">{t.footer.links.privacy}</a>
             </Link>
-            <a href="#" className="hover:text-foreground transition-colors cursor-not-allowed opacity-50" onClick={(e) => e.preventDefault()}>{t.footer.links.terms}</a>
+            <Link href="/terms">
+              <a className="hover:text-foreground transition-colors">{t.footer.links.terms}</a>
+            </Link>
           </div>
         </div>
       </div>
